@@ -24,18 +24,23 @@ public class App {
         DAYS.put(1, new Day01());
     }
 
-    private static List<String> loadInput(int day){
+
+    public static List<String> loadInput(int day, String suffix) {
         String paddedDay = String.valueOf(day);
         if(day < 10) {
             paddedDay = "0" + day;
         }
-        String fileName = "day" + paddedDay + ".txt";
+        String fileName = "day" + paddedDay + suffix + ".txt";
 
         try(BufferedReader r = new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream(fileName)))){
             return r.lines().collect(toList());
         } catch(IOException e){
             throw new UncheckedIOException(e);
         }
+    }
+
+    private static List<String> loadInput(int day) {
+        return loadInput(day, "");
     }
 
     public static void main(String[] args) {
