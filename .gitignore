@@ -7,7 +7,7 @@ build
 # Intellij
 .idea
 out
- 
+
 # eclipse
 /.apt_generated
 /.classpath
@@ -16,4 +16,4 @@ out
 /.settings
 /bin
 
-day*.txt
+# day*.txt
